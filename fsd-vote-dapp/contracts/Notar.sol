@@ -8,11 +8,11 @@ contract Notar {
     /**
      * State variable
      */
-    bytes32 private proof;
+    mapping (bytes32 => bool ) private proofs;
     // calculate and store the proof for a document
     // *transactional function*
     function notarize(string document) public  {
-        proof = proofFor(document);
+        proofs[proofFor(document)] = true;
     }
     // helper function to get a document's sha256
     // *read-only function*
@@ -22,7 +22,9 @@ contract Notar {
     /**
      * Return value of proof
      */
-    function getProof() public view returns (bytes32){
-        return proof;
+    function hasProof(string proofDoc) public view 
+        returns (bool){
+        return proofs[proofFor(proofDoc)];
     }
+
 }
