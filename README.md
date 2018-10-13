@@ -41,7 +41,7 @@ Our job is to write the smart contract and front-end logic for this ĐApp.
 
 ## Installation
 - `npm install -g ganache-cli`
-- `npm install -g traffle`
+- `npm install -g truffle`
 
 ## Running
 - run a local blockchain RPC server to test and develop against `ganache-cli`
